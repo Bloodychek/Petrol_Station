@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Petrol_Station
+namespace Petrol_Station.Models
 {
     public partial class IncomeAndExpensesOfGsm
     {
@@ -9,7 +9,7 @@ namespace Petrol_Station
         public int? NumberOfCapacity { get; set; }
         public int? ContainerId { get; set; }
         public int? IncomeOrExpensePerliter { get; set; }
-        public DateTime? DateAndTimeOfTheOperationIncomeOrExpense { get; set; }
+        public DateTime DateAndTimeOfTheOperationIncomeOrExpense { get; set; }
         public int? StaffId { get; set; }
         public string ResponsibleForTheOperation { get; set; }
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using Petrol_Station.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
@@ -6,10 +7,6 @@ namespace Petrol_Station
 {
     public partial class Petrol_StationContext : DbContext
     {
-        public Petrol_StationContext()
-        {
-        }
-
         public Petrol_StationContext(DbContextOptions<Petrol_StationContext> options)
             : base(options)
         {

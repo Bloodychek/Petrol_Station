@@ -1,0 +1,70 @@
+﻿@model Petrol_Station.ViewModels.ContainersViewModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div>
+    <h3> Containers</h3>
+    @if (User.IsInRole("admin"))
+    {
+        <a asp-action="Create">Добавить</a>
+    }
+
+    <div class="containers">
+        <fieldset class="p-2 float-right">
+            <form method="post" asp-route-page="@Model.PageViewModel.PageNumber">
+                <label asp-for="ContainersFilterViewModel.Number"></label>
+                <input name="Number" value="@Model.ContainersFilterViewModel.Number" />
+
+                <label asp-for="ContainersFilterViewModel.TankCapacity"></label>
+                <input name="TankCapacity" value="@Model.ContainersFilterViewModel.TankCapacity" />
+
+                <input type="submit" value="Filter" class="btn btn-primary" />
+            </form>
+        </fieldset>
+    </div>
+
+    <table border="1">
+        <tr class="header">
+            <td>
+                <a asp-action="Index" asp-route-sortState="@Model.SortViewModel.NumberSort" asp-route-page="@Model.PageViewModel.PageNumber" class="nav-link text-black">
+                    Number
+                </a>
+            </td>
+            <td>
+                <a asp-action="Index" asp-route-sortState="@Model.SortViewModel.TankCapacitySort" asp-route-page="@Model.PageViewModel.PageNumber" class="nav-link text-black">
+                    Tank Capacity
+                </a>
+            </td>
+
+        </tr>
+        @foreach (Petrol_Station.Models.Containers g in Model.Containers)
+        {
+            <tr>
+                <td><p>@g.Number</p></td>
+                <td><p>@g.TankCapacity</p></td>
+                <td><a asp-action="Edit" asp-route-id="@g.ContainerId" asp-route-page="@Model.PageViewModel.PageNumber" class="btn btn-warning">Edit</a></td>
+                <td><a asp-action="Delete" asp-route-id="@g.ContainerId" asp-route-page="@Model.PageViewModel.PageNumber" class="btn btn-warning">Delete</a></td>
+            </tr>
+        }
+    </table>
+    @if (Model.PageViewModel.HasPreviousPage)
+    {
+        <a asp-action="Index"
+           asp-route-page="@(Model.PageViewModel.PageNumber - 1)"
+           class="btn btn-outline-dark">
+            <i class="glyphicon glyphicon-chevron-left"></i>
+            Назад
+        </a>
+    }
+    @if (Model.PageViewModel.HasNextPage)
+    {
+        <a asp-action="Index"
+           asp-route-page="@(Model.PageViewModel.PageNumber + 1)"
+           class="btn btn-outline-dark">
+            Вперед
+            <i class="glyphicon glyphicon-chevron-right"></i>
+        </a>
+    }
+</div>
+

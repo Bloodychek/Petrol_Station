@@ -1,0 +1,94 @@
+﻿@model Petrol_Station.ViewModels.StaffViewModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div>
+    <h3> Staff</h3>
+    @if (User.IsInRole("admin"))
+    {
+        <a asp-action="Create">Добавить</a>
+    }
+
+    <div class="staff">
+        <fieldset class="p-2 float-right">
+            <form method="post" asp-route-page="@Model.PageViewModel.PageNumber">
+                <label asp-for="StaffFilterViewModel.FullName"></label>
+                <input name="FullName" value="@Model.StaffFilterViewModel.FullName" />
+
+                <label asp-for="StaffFilterViewModel.StaffAge"></label>
+                <input name="StaffAge" value="@Model.StaffFilterViewModel.StaffAge" />
+
+                <label asp-for="StaffFilterViewModel.StaffFunction"></label>
+                <input name="StaffFunction" value="@Model.StaffFilterViewModel.StaffFunction" />
+
+                <label asp-for="StaffFilterViewModel.WorkingHoursForAweek"></label>
+                <input type="date" name="WorkingHoursForAweek" value="@Model.StaffFilterViewModel.WorkingHoursForAweek" />
+
+                <label asp-for="StaffFilterViewModel.FirstPoint"></label>
+                <input type="date" name="FirstPoint" value="@Model.StaffFilterViewModel.FirstPoint" />
+                
+                <label asp-for="StaffFilterViewModel.EndPoint"></label>
+                <input type="date" name="EndPoint" value="@Model.StaffFilterViewModel.EndPoint" />
+
+                <input type="submit" value="Filter" class="btn btn-primary" />
+            </form>
+        </fieldset>
+    </div>
+
+    <table border="1">
+        <tr class="header">
+            <td>
+                <a asp-action="Index" asp-route-sortState="@Model.SortViewModel.FullNameSort" asp-route-page="@Model.PageViewModel.PageNumber" class="nav-link text-black">
+                    Full Name
+                </a>
+            </td>
+            <td>
+                <a asp-action="Index" asp-route-sortState="@Model.SortViewModel.StaffAgeSort" asp-route-page="@Model.PageViewModel.PageNumber" class="nav-link text-black">
+                    Staff Age
+                </a>
+            </td>
+            <td>
+                <a asp-action="Index" asp-route-sortState="@Model.SortViewModel.StaffFunctionSort" asp-route-page="@Model.PageViewModel.PageNumber" class="nav-link text-black">
+                    Staff Function
+                </a>
+            </td>
+            <td>
+                <a asp-action="Index" asp-route-sortState="@Model.SortViewModel.WorkingHoursForAweekSort" asp-route-page="@Model.PageViewModel.PageNumber" class="nav-link text-black">
+                    Working Hours For Aweek
+                </a>
+            </td>
+
+        </tr>
+        @foreach (Petrol_Station.Models.Staff g in Model.Staffs)
+        {
+            <tr>
+                <td><p>@g.FullName</p></td>
+                <td><p>@g.StaffAge</p></td>
+                <td><p>@g.StaffFunction</p></td>
+                <td><p>@g.WorkingHoursForAweek</p></td>
+                <td><a asp-action="Edit" asp-route-id="@g.StaffId" asp-route-page="@Model.PageViewModel.PageNumber" class="btn btn-warning">Edit</a></td>
+                <td><a asp-action="Delete" asp-route-id="@g.StaffId" asp-route-page="@Model.PageViewModel.PageNumber" class="btn btn-warning">Delete</a></td>
+            </tr>
+        }
+    </table>
+    @if (Model.PageViewModel.HasPreviousPage)
+    {
+        <a asp-action="Index"
+           asp-route-page="@(Model.PageViewModel.PageNumber - 1)"
+           class="btn btn-outline-dark">
+            <i class="glyphicon glyphicon-chevron-left"></i>
+            Назад
+        </a>
+    }
+    @if (Model.PageViewModel.HasNextPage)
+    {
+        <a asp-action="Index"
+           asp-route-page="@(Model.PageViewModel.PageNumber + 1)"
+           class="btn btn-outline-dark">
+            Вперед
+            <i class="glyphicon glyphicon-chevron-right"></i>
+        </a>
+    }
+</div>
+

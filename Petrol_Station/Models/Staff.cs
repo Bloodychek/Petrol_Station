@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Petrol_Station
+namespace Petrol_Station.Models
 {
     public partial class Staff
     {
@@ -14,7 +14,7 @@ namespace Petrol_Station
         public string FullName { get; set; }
         public int? StaffAge { get; set; }
         public string StaffFunction { get; set; }
-        public DateTime? WorkingHoursForAweek { get; set; }
+        public DateTime WorkingHoursForAweek { get; set; }
 
         public virtual ICollection<IncomeAndExpensesOfGsm> IncomeAndExpensesOfGsm { get; set; }
     }

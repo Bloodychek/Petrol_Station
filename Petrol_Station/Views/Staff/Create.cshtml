@@ -1,0 +1,41 @@
+﻿@model Petrol_Station.ViewModels.StaffViewModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container text-center w-50">
+    <form method="post">
+        <h2>Create a new entity</h2>
+
+        <div>
+            <input hidden asp-for="PageViewModel.PageNumber" value="@Model.PageViewModel.PageNumber" />
+        </div>
+
+        <div asp-validation-summary="ModelOnly" class="text-danger text-justify w-100 m-lg-0"></div>
+
+        <p>
+            <label asp-for="Staff.FullName"></label><br />
+            <input asp-for="Staff.FullName" class="w-75" />
+        <p><span asp-validation-for="Staff.FullName" class="text-danger"></span></p>
+
+        <p>
+            <label asp-for="Staff.StaffAge"></label><br />
+            <input asp-for="Staff.StaffAge" class="w-75" />
+        <p><span asp-validation-for="Staff.StaffAge" class="text-danger"></span></p>
+
+        <p>
+            <label asp-for="Staff.StaffFunction"></label><br />
+            <input asp-for="Staff.StaffFunction" class="w-75" />
+        <p><span asp-validation-for="Staff.StaffFunction" class="text-danger"></span></p>
+
+        <p>
+            <label asp-for="Staff.WorkingHoursForAweek"></label><br />
+            <input asp-for="Staff.WorkingHoursForAweek" class="w-75" />
+        <p><span asp-validation-for="Staff.WorkingHoursForAweek" class="text-danger"></span></p>
+
+        <p>
+            <input type="submit" value="Add" class="btn btn-success w-75" />
+
+        <p><a asp-action="Index" asp-route-page="@Model.PageViewModel.PageNumber" class="btn btn-danger w-75">Back</a></p>
+    </form>
+</div>

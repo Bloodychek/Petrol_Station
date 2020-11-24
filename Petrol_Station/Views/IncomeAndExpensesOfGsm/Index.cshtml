@@ -1,0 +1,105 @@
+﻿@model Petrol_Station.ViewModels.IncomeAndExpensesOfGsmViewModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div>
+    <h3> IncomeAndExpensesOfGsm</h3>
+    @if (User.IsInRole("admin"))
+    {
+        <a asp-action="Create">Добавить</a>
+    }
+
+    <div class="container">
+        <fieldset class="p-2 float-right">
+            <form method="post" asp-route-page="@Model.PageViewModel.PageNumber">
+                <label asp-for="IncomeAndExpensesOfGsmFilterViewModel.NumberOfCapacity"></label>
+                <input name="NumberOfCapacity" value="@Model.IncomeAndExpensesOfGsmFilterViewModel.NumberOfCapacity" />
+
+                <label asp-for="IncomeAndExpensesOfGsmFilterViewModel.IncomeOrExpensePerliter"></label>
+                <input name="IncomeOrExpensePerliter" value="@Model.IncomeAndExpensesOfGsmFilterViewModel.IncomeOrExpensePerliter" />
+
+                <label asp-for="IncomeAndExpensesOfGsmFilterViewModel.DateAndTimeOfTheOperationIncomeOrExpense"></label>
+                <input type="date" name="DateAndTimeOfTheOperationIncomeOrExpense" value="@Model.IncomeAndExpensesOfGsmFilterViewModel.DateAndTimeOfTheOperationIncomeOrExpense" />
+
+                <label asp-for="IncomeAndExpensesOfGsmFilterViewModel.ResponsibleForTheOperation"></label>
+                <input  name="ResponsibleForTheOperation" value="@Model.IncomeAndExpensesOfGsmFilterViewModel.ResponsibleForTheOperation" />
+                
+                <label asp-for="IncomeAndExpensesOfGsmFilterViewModel.StaffName"></label>
+                <input  name="StaffName" value="@Model.IncomeAndExpensesOfGsmFilterViewModel.StaffName" />
+
+                <input type="submit" value="Filter" class="btn btn-primary" />
+            </form>
+        </fieldset>
+    </div>
+
+    <table border="1">
+        <tr class="header">
+            <td>
+                <a asp-action="Index" asp-route-sortState="@Model.SortViewModel.NumberOfCapacitySort" asp-route-page="@Model.PageViewModel.PageNumber" class="nav-link text-black">
+                    Number Of Capacity
+                </a>
+            </td>
+            <td>
+                <a asp-action="Index" asp-route-sortState="@Model.SortViewModel.IncomeOrExpensePerliterSort" asp-route-page="@Model.PageViewModel.PageNumber" class="nav-link text-black">
+                    Income Or Expense Per liter
+                </a>
+            </td>
+            <td>
+                <a asp-action="Index" asp-route-sortState="@Model.SortViewModel.DateAndTimeOfTheOperationIncomeOrExpenseSort" asp-route-page="@Model.PageViewModel.PageNumber" class="nav-link text-black">
+                    Date And Time Of The Operation Income Or Expense
+                </a>
+            </td>
+            <td>
+                <a asp-action="Index" asp-route-sortState="@Model.SortViewModel.ResponsibleForTheOperationSort" asp-route-page="@Model.PageViewModel.PageNumber" class="nav-link text-black">
+                    Responsible For The Operation
+                </a>
+            </td>
+            <td>
+                <a asp-action="Index" asp-route-sortState="@Model.SortViewModel.FullNameSort" asp-route-page="@Model.PageViewModel.PageNumber" class="nav-link text-black">
+                    Container Number
+                </a>
+            </td>
+            <td>
+                <a asp-action="Index" asp-route-sortState="@Model.SortViewModel.NumberSort" asp-route-page="@Model.PageViewModel.PageNumber" class="nav-link text-black">
+                    Staff Name
+                </a>
+            </td>
+
+        </tr>
+        @foreach (Petrol_Station.Models.IncomeAndExpensesOfGsm g in Model.IncomeAndExpensesOfGsms)
+        {
+            <tr>
+                <td><p>@g.NumberOfCapacity</p></td>
+                <td><p>@g.IncomeOrExpensePerliter</p></td>
+                <td><p>@g.DateAndTimeOfTheOperationIncomeOrExpense</p></td>
+                <td><p>@g.ResponsibleForTheOperation</p></td>
+                <td><p>@g.Container.Number</p></td>
+                <td><p>@g.Staff.FullName</p></td>
+                <td><a asp-action="Edit" asp-route-id="@g.IncomeAndExpenseOfGsmid" asp-route-page="@Model.PageViewModel.PageNumber" class="btn btn-warning">Edit</a></td>
+                <td><a asp-action="Delete" asp-route-id="@g.IncomeAndExpenseOfGsmid" asp-route-page="@Model.PageViewModel.PageNumber" class="btn btn-warning">Delete</a></td>
+            </tr>
+        }
+    </table>
+    @if (Model.PageViewModel.HasPreviousPage)
+    {
+        <a asp-action="Index"
+           asp-route-page="@(Model.PageViewModel.PageNumber - 1)"
+           class="btn btn-outline-dark">
+            <i class="glyphicon glyphicon-chevron-left"></i>
+            Назад
+        </a>
+    }
+    @if (Model.PageViewModel.HasNextPage)
+    {
+        <a asp-action="Index"
+           asp-route-page="@(Model.PageViewModel.PageNumber + 1)"
+           class="btn btn-outline-dark">
+            Вперед
+            <i class="glyphicon glyphicon-chevron-right"></i>
+        </a>
+    }
+</div>
+
+
+

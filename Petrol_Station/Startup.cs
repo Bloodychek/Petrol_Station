@@ -1,10 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Petrol_Station;
+using Petrol_Station.Data;
+using Petrol_Station.Models;
+using Petrol_Station.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -23,6 +24,23 @@ namespace Petrol_Station
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<Petrol_StationContext>(options => options.UseSqlServer(Configuration.GetConnectionString("ConnectionDB")));
+
+            services.AddTransient<CacheProvider>();
+
+            services.AddDbContext<ApplicationContext>(options =>
+                   options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddDistributedMemoryCache();
+            services.AddSession();
+
+            services.AddIdentity<User, IdentityRole>(opts =>
+            {
+                opts.Password.RequireNonAlphanumeric = false;   // требуются ли не алфавитно-цифровые символы
+                opts.Password.RequireLowercase = false; // требуются ли символы в нижнем регистре
+                opts.Password.RequireUppercase = false; // требуются ли символы в верхнем регистре
+            })
+                .AddEntityFrameworkStores<ApplicationContext>();
             services.AddControllersWithViews();
         }
 
@@ -44,6 +62,10 @@ namespace Petrol_Station
 
             app.UseRouting();
 
+            app.UseSession();
+
+            app.UseAuthentication();
+            
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

@@ -1,0 +1,57 @@
+﻿@model Petrol_Station.ViewModels.IncomeAndExpensesOfGsmViewModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container text-center w-50">
+    <form method="post">
+        <h2>Create a new entity</h2>
+
+        <div>
+            <input hidden asp-for="PageViewModel.PageNumber" value="@Model.PageViewModel.PageNumber" />
+        </div>
+
+        <div asp-validation-summary="ModelOnly" class="text-danger text-center w-100 m-lg-0"></div>
+
+        <p>
+            <label asp-for="IncomeAndExpensesOfGsm.NumberOfCapacity"></label><br />
+            <input asp-for="IncomeAndExpensesOfGsm.NumberOfCapacity" class="w-75" />
+        <p><span asp-validation-for="IncomeAndExpensesOfGsm.NumberOfCapacity" class="text-danger"></span></p>
+
+        <p>
+            <label asp-for="IncomeAndExpensesOfGsm.IncomeOrExpensePerliter"></label><br />
+            <input asp-for="IncomeAndExpensesOfGsm.IncomeOrExpensePerliter" class="w-75" />
+        <p><span asp-validation-for="IncomeAndExpensesOfGsm.IncomeOrExpensePerliter" class="text-danger"></span></p>
+
+        <p>
+            <label asp-for="IncomeAndExpensesOfGsm.DateAndTimeOfTheOperationIncomeOrExpense"></label><br />
+            <input type="date" asp-for="IncomeAndExpensesOfGsm.DateAndTimeOfTheOperationIncomeOrExpense" class="w-75" />
+        <p><span asp-validation-for="IncomeAndExpensesOfGsm.DateAndTimeOfTheOperationIncomeOrExpense" class="text-danger"></span></p>
+
+        <p>
+            <label asp-for="IncomeAndExpensesOfGsm.StaffId"></label><br />
+            <input type="search" list="Staff" asp-for="StaffName" class="w-75" />
+            <datalist id="Staff">
+                @foreach (var item in Model.StaffList)
+                {
+                    <option value="@item.FullName"></option>
+                }
+            </datalist>
+        <p><span asp-validation-for="IncomeAndExpensesOfGsm.StaffId" class="text-danger"></span></p>
+
+        <p>
+            <label asp-for="IncomeAndExpensesOfGsm.ContainerId"></label><br />
+            <input type="search" list="Containers" asp-for="ContainerNumber" class="w-75" />
+            <datalist id="Containers">
+                @foreach (var item in Model.ContainerList)
+                {
+                    <option value="@item.Number"></option>
+                }
+            </datalist>
+        <p><span asp-validation-for="IncomeAndExpensesOfGsm.ContainerId" class="text-danger"></span></p>
+
+        <p>
+            <input type="submit" value="Add" class="btn btn-success w-75" />
+        <p><a asp-action="Index" asp-route-page="@Model.PageViewModel.PageNumber" class="btn btn-danger w-75">Back</a></p>
+    </form>
+</div>
