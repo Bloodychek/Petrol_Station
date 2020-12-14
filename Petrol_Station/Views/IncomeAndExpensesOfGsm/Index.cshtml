@@ -7,10 +7,9 @@
     <h3> IncomeAndExpensesOfGsm</h3>
     @if (User.IsInRole("admin"))
     {
-        <a asp-action="Create">Добавить</a>
+        <a asp-route-page="@Model.PageViewModel.PageNumber" asp-action="Create">Добавить</a>
     }
-
-    <div class="container">
+    <div class="income">
         <fieldset class="p-2 float-right">
             <form method="post" asp-route-page="@Model.PageViewModel.PageNumber">
                 <label asp-for="IncomeAndExpensesOfGsmFilterViewModel.NumberOfCapacity"></label>
@@ -23,12 +22,23 @@
                 <input type="date" name="DateAndTimeOfTheOperationIncomeOrExpense" value="@Model.IncomeAndExpensesOfGsmFilterViewModel.DateAndTimeOfTheOperationIncomeOrExpense" />
 
                 <label asp-for="IncomeAndExpensesOfGsmFilterViewModel.ResponsibleForTheOperation"></label>
-                <input  name="ResponsibleForTheOperation" value="@Model.IncomeAndExpensesOfGsmFilterViewModel.ResponsibleForTheOperation" />
-                
+                <input name="ResponsibleForTheOperation" value="@Model.IncomeAndExpensesOfGsmFilterViewModel.ResponsibleForTheOperation" />
+
                 <label asp-for="IncomeAndExpensesOfGsmFilterViewModel.StaffName"></label>
-                <input  name="StaffName" value="@Model.IncomeAndExpensesOfGsmFilterViewModel.StaffName" />
+                <input name="StaffName" value="@Model.IncomeAndExpensesOfGsmFilterViewModel.StaffName" />
 
                 <input type="submit" value="Filter" class="btn btn-primary" />
+            </form>
+        </fieldset>
+
+        <fieldset class="p-2 float-right">
+            <form method="get" asp-action="SumIncomeAndExpence" asp-route-page="@Model.PageViewModel.PageNumber">
+                <label>d1</label>
+                <input type="date" name="d1" />
+                <label>d2</label>
+                <input type="date" name="d2" />
+
+                <input type="submit" value="Sum" class="btn btn-primary" />
             </form>
         </fieldset>
     </div>
@@ -69,16 +79,20 @@
         </tr>
         @foreach (Petrol_Station.Models.IncomeAndExpensesOfGsm g in Model.IncomeAndExpensesOfGsms)
         {
-            <tr>
-                <td><p>@g.NumberOfCapacity</p></td>
-                <td><p>@g.IncomeOrExpensePerliter</p></td>
-                <td><p>@g.DateAndTimeOfTheOperationIncomeOrExpense</p></td>
-                <td><p>@g.ResponsibleForTheOperation</p></td>
-                <td><p>@g.Container.Number</p></td>
-                <td><p>@g.Staff.FullName</p></td>
-                <td><a asp-action="Edit" asp-route-id="@g.IncomeAndExpenseOfGsmid" asp-route-page="@Model.PageViewModel.PageNumber" class="btn btn-warning">Edit</a></td>
-                <td><a asp-action="Delete" asp-route-id="@g.IncomeAndExpenseOfGsmid" asp-route-page="@Model.PageViewModel.PageNumber" class="btn btn-warning">Delete</a></td>
-            </tr>
+    <tr>
+        <td><p>@g.NumberOfCapacity</p></td>
+        <td><p>@g.IncomeOrExpensePerliter</p></td>
+        <td><p>@g.DateAndTimeOfTheOperationIncomeOrExpense</p></td>
+        <td><p>@g.ResponsibleForTheOperation</p></td>
+        <td><p>@g.Container.Number</p></td>
+        <td><p>@g.Staff.FullName</p></td>
+        @if (User.IsInRole("admin"))
+        {
+            <td><a asp-action="Edit" asp-route-id="@g.IncomeAndExpenseOfGsmid" asp-route-page="@Model.PageViewModel.PageNumber" class="btn btn-warning">Edit</a></td>
+            <td><a asp-action="Delete" asp-route-id="@g.IncomeAndExpenseOfGsmid" asp-route-page="@Model.PageViewModel.PageNumber" class="btn btn-warning">Delete</a></td>
+        }
+
+    </tr>
         }
     </table>
     @if (Model.PageViewModel.HasPreviousPage)

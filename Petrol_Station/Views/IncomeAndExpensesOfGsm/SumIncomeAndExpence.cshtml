@@ -1,0 +1,47 @@
+﻿@model Petrol_Station.ViewModels.GroupViewModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div>
+    <h3> Sum</h3>
+    <table>
+        <thead>
+            <tr>
+                <th> TypeOfGsm</th>
+                <th> Sum </th>
+             </tr>
+        </thead>
+        <tbody>
+        @foreach (KeyValuePair <string, int> g in Model.KeyValuePairs)
+        {
+            <tr>
+                <td><p>@g.Key</p></td>
+                <td><p>@g.Value</p></td>
+            </tr>
+        }
+        </tbody>
+    </table>
+
+    @if (Model.PageViewModel.HasPreviousPage)
+    {
+        <a asp-action="SumIncomeAndExpence"
+           asp-route-page="@(Model.PageViewModel.PageNumber - 1)" asp-route-d1="@Model.d1" asp-route-d2 ="@Model.d2"
+           class="btn btn-outline-dark">
+            <i class="glyphicon glyphicon-chevron-left"></i>
+            Назад
+        </a>
+    }
+    @if (Model.PageViewModel.HasNextPage)
+    {
+        <a asp-action="SumIncomeAndExpence"
+           asp-route-page="@(Model.PageViewModel.PageNumber + 1)" asp-route-d1="@Model.d1" asp-route-d2="@Model.d2"
+           class="btn btn-outline-dark">
+            Вперед
+            <i class="glyphicon glyphicon-chevron-right"></i>
+        </a>
+    }
+</div>
+
+
+

@@ -98,7 +98,7 @@ namespace Petrol_Station.Controllers
 
                 await _userManager.RemoveFromRolesAsync(user, removedRoles);
 
-                return RedirectToAction("Index","Users");
+                return RedirectToAction("UserList");
             }
 
             return NotFound();

@@ -1,0 +1,46 @@
+﻿@model Petrol_Station.ViewModels.StaffWeekdaysViewModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div>
+    <h3> Weekdays</h3>
+
+    <table border="1">
+        <tr class="header">
+            <td>
+                    Full Name    
+            </td>
+            <td>
+                    Working Hours For Aweek
+            </td>
+
+        </tr>
+        @foreach (Petrol_Station.ViewModels.StaffsWeekdays g in Model.staffsWeekdays)
+        {
+            <tr>
+                <td><p>@g.StaffName</p></td>
+                <td><p>@g.Date</p></td>
+            </tr>
+        }
+    </table>
+    @if (Model.PageViewModel.HasPreviousPage)
+    {
+        <a asp-action="GetWeekday"
+           asp-route-page="@(Model.PageViewModel.PageNumber - 1)"
+           class="btn btn-outline-dark">
+            <i class="glyphicon glyphicon-chevron-left"></i>
+            Назад
+        </a>
+    }
+    @if (Model.PageViewModel.HasNextPage)
+    {
+        <a asp-action="GetWeekday"
+           asp-route-page="@(Model.PageViewModel.PageNumber + 1)"
+           class="btn btn-outline-dark">
+            Вперед
+            <i class="glyphicon glyphicon-chevron-right"></i>
+        </a>
+    }
+</div>
+

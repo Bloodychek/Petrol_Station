@@ -7,9 +7,9 @@
     <h3> Staff</h3>
     @if (User.IsInRole("admin"))
     {
-        <a asp-action="Create">Добавить</a>
+        <a asp-route-page="@Model.PageViewModel.PageNumber" asp-action="Create">Добавить</a>
     }
-
+    <p><a asp-action="GetWeekday" asp-route-isSorted="true">Вывод рабочих дней текущего месяца</a></p>
     <div class="staff">
         <fieldset class="p-2 float-right">
             <form method="post" asp-route-page="@Model.PageViewModel.PageNumber">
@@ -23,11 +23,11 @@
                 <input name="StaffFunction" value="@Model.StaffFilterViewModel.StaffFunction" />
 
                 <label asp-for="StaffFilterViewModel.WorkingHoursForAweek"></label>
-                <input type="date" name="WorkingHoursForAweek" value="@Model.StaffFilterViewModel.WorkingHoursForAweek" />
+                <input name="WorkingHoursForAweek" value="@Model.StaffFilterViewModel.WorkingHoursForAweek" />
 
                 <label asp-for="StaffFilterViewModel.FirstPoint"></label>
                 <input type="date" name="FirstPoint" value="@Model.StaffFilterViewModel.FirstPoint" />
-                
+
                 <label asp-for="StaffFilterViewModel.EndPoint"></label>
                 <input type="date" name="EndPoint" value="@Model.StaffFilterViewModel.EndPoint" />
 
@@ -67,8 +67,12 @@
                 <td><p>@g.StaffAge</p></td>
                 <td><p>@g.StaffFunction</p></td>
                 <td><p>@g.WorkingHoursForAweek</p></td>
-                <td><a asp-action="Edit" asp-route-id="@g.StaffId" asp-route-page="@Model.PageViewModel.PageNumber" class="btn btn-warning">Edit</a></td>
-                <td><a asp-action="Delete" asp-route-id="@g.StaffId" asp-route-page="@Model.PageViewModel.PageNumber" class="btn btn-warning">Delete</a></td>
+                @if (User.IsInRole("admin"))
+                {
+                    <td><a asp-action="Edit" asp-route-id="@g.StaffId" asp-route-page="@Model.PageViewModel.PageNumber" class="btn btn-warning">Edit</a></td>
+                    <td><a asp-action="Delete" asp-route-id="@g.StaffId" asp-route-page="@Model.PageViewModel.PageNumber" class="btn btn-warning">Delete</a></td>
+                }
+
             </tr>
         }
     </table>

@@ -7,7 +7,7 @@
     <h3> Gsm</h3>
     @if (User.IsInRole("admin"))
     {
-        <a asp-action="Create">Добавить</a>
+        <a asp-route-page="@Model.PageViewModel.PageNumber" asp-action="Create">Добавить</a>
     }
 
     <div class="gsm">
@@ -40,12 +40,16 @@
         </tr>
         @foreach (Petrol_Station.Models.Gsm g in Model.Gsms)
         {
-            <tr>
-                <td><p>@g.TypeOfGsm</p></td>
-                <td><p>@g.TTkofType</p></td>
-                <td><a asp-action="Edit" asp-route-id="@g.GSmid" asp-route-page="@Model.PageViewModel.PageNumber" class="btn btn-warning">Edit</a></td>
-                <td><a asp-action="Delete" asp-route-id="@g.GSmid" asp-route-page="@Model.PageViewModel.PageNumber" class="btn btn-warning">Delete</a></td>
-            </tr>
+    <tr>
+        <td><p>@g.TypeOfGsm</p></td>
+        <td><p>@g.TTkofType</p></td>
+        @if (User.IsInRole("admin"))
+        {
+            <td><a asp-action="Edit" asp-route-id="@g.GSmid" asp-route-page="@Model.PageViewModel.PageNumber" class="btn btn-warning">Edit</a></td>
+            <td><a asp-action="Delete" asp-route-id="@g.GSmid" asp-route-page="@Model.PageViewModel.PageNumber" class="btn btn-warning">Delete</a></td>
+        }
+
+    </tr>
         }
     </table>
     @if (Model.PageViewModel.HasPreviousPage)

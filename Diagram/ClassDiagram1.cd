@@ -1,0 +1,329 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Petrol_Station.Controllers.AccountController" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAABAAAIAAAABAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>AccountController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Petrol_Station.Controllers.ContainersController" Collapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACACAAABAAAAAAAAIAAAAAAAAAEAAEACAAEAAAAAAAA=</HashCode>
+      <FileName>ContainersController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Petrol_Station.Controllers.CostsController" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACACAAABAAAAAAAAIAAAAAAAAAEAAEACAAEAAAAAAAA=</HashCode>
+      <FileName>CostsController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Petrol_Station.Controllers.GsmController" Collapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACACAAABAAAAAAAAIAAAAAAAAAEAAEACAAEAAAAAAAA=</HashCode>
+      <FileName>GsmController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Petrol_Station.Controllers.HomeController" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAIAAAAQAAAAEAAAAAAAA=</HashCode>
+      <FileName>HomeController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Petrol_Station.Controllers.IncomeAndExpensesOfGsmController" Collapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACACAAABAAAAAAAAIAAAAAAAAAEAAEACAAEAAAAAIAA=</HashCode>
+      <FileName>IncomeAndExpensesOfGsmController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Petrol_Station.Controllers.RolesController" Collapsed="true">
+    <Position X="0.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACABAAAAAAAAAAAAAAAAAAgAAEAAEACAAEAAAAAAAA=</HashCode>
+      <FileName>RolesController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Petrol_Station.Controllers.StaffController" Collapsed="true">
+    <Position X="2.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACACAAABAAAAEAAAIAAAAAAAAAEAAEACAAEAAAAAAAA=</HashCode>
+      <FileName>StaffController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Petrol_Station.Controllers.UsersController" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAAAAAAAAAAEAAEACAAEAAAAAAAA=</HashCode>
+      <FileName>UsersController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Petrol_Station.Data.ApplicationContext" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ApplicationContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Petrol_Station.Services.CacheProvider" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAQAAAAAIAABABAAAAAAAAAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>CacheProvider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Petrol_Station.ViewModels.ChangeRoleViewModel" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAEAgAAAAAAAgAAAAACAAAAAA=</HashCode>
+      <FileName>ChangeRoleViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Petrol_Station.ViewModels.ContainersFilterViewModel" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>ContainersFilterViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Petrol_Station.ViewModels.ContainersViewModel" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AJAAAAQAAAAAAAAAAAAACAAAAAAAAEAAAAgAAAAAAAA=</HashCode>
+      <FileName>ContainersViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Petrol_Station.ViewModels.CostsFilterViewModel" Collapsed="true">
+    <Position X="5.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAIAAAAAAA=</HashCode>
+      <FileName>CostsFilterViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Petrol_Station.ViewModels.CostsViewModel" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAQAAAAAAACCBAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>CostsViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Petrol_Station.ViewModels.CreateUserViewModel" Collapsed="true">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABCAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>CreateUserViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Petrol_Station.ViewModels.DeleteViewModels" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIQAAAAA=</HashCode>
+      <FileName>DeleteViewModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Petrol_Station.ViewModels.EditUserViewModel" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAABCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EditUserViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Petrol_Station.ViewModels.GroupViewModel" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAAAAACAAAAAAAEAAAAAAACAAAAAA=</HashCode>
+      <FileName>GroupViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Petrol_Station.ViewModels.GsmFilterViewModel" Collapsed="true">
+    <Position X="9.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GsmFilterViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Petrol_Station.ViewModels.GsmViewModel" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAACAAAAAAAACAAAAAAAAEEAAAAAABAAAAA=</HashCode>
+      <FileName>GsmViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Petrol_Station.ViewModels.IncomeAndExpensesOfGsmFilterViewModel" Collapsed="true">
+    <Position X="2.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAQAAAQAAAAAAAAAAAAAAgAAAAAAAAAAACAA=</HashCode>
+      <FileName>IncomeAndExpensesOfGsmFilterViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Petrol_Station.ViewModels.IncomeAndExpensesOfGsmViewModel" Collapsed="true">
+    <Position X="7.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAIAAAQAAACIAAAEAgAEAAAAAAAAACCAA=</HashCode>
+      <FileName>IncomeAndExpensesOfGsmViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Petrol_Station.ViewModels.LoginViewModel" Collapsed="true">
+    <Position X="9.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAACAAIAAAAgAAA=</HashCode>
+      <FileName>LoginViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Petrol_Station.ViewModels.PageViewModel" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAgAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PageViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Petrol_Station.ViewModels.RegisterViewModel" Collapsed="true">
+    <Position X="5.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABCAAAAAAAAAAAAAAgAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>RegisterViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Petrol_Station.ViewModels.SortViewModel" Collapsed="true">
+    <Position X="7.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAEBAACAQAAABASEAAAEAIAAAAAgAAAEAAYA=</HashCode>
+      <FileName>SortViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Petrol_Station.ViewModels.StaffFilterViewModel" Collapsed="true">
+    <Position X="4" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAQIAAAAAAAAAAAAAAAAAAAQACACAAAAA=</HashCode>
+      <FileName>StaffFilterViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Petrol_Station.ViewModels.StaffsWeekdays" Collapsed="true">
+    <Position X="5.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAACAA=</HashCode>
+      <FileName>StaffsWeekdays.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Petrol_Station.ViewModels.StaffViewModel" Collapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAACAAAACAAAUAAAAAAAAAAAAA=</HashCode>
+      <FileName>StaffViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Petrol_Station.ViewModels.StaffWeekdaysViewModel" Collapsed="true">
+    <Position X="4" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACABAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>StaffWeekdayViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diagram.Class1" Collapsed="true">
+    <Position X="10" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Class1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Petrol_Station.Models.Containers">
+    <Position X="14.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAIAACAEAAAAAAAEAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Containers.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TypeOfGsm" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Petrol_Station.Models.Costs">
+    <Position X="11" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAACIAAAAAAAAAAAAAAAAAAAABAIAAAAAAA=</HashCode>
+      <FileName>Costs.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TypeOfGsm" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Petrol_Station.Models.ErrorViewModel" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ErrorViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Petrol_Station.Models.Gsm">
+    <Position X="13.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAIEAAAAACAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Gsm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Petrol_Station.Models.IncomeAndExpensesOfGsm">
+    <Position X="12" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQCAQAAAQACAAAAAAAAACAAgAACAAAAAgAAAAA=</HashCode>
+      <FileName>IncomeAndExpensesOfGsm.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Staff" />
+      <Property Name="Container" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Petrol_Station.Models.Staff">
+    <Position X="9.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAIAAAAAAAAAAAEAAAAACAAACACAAAAA=</HashCode>
+      <FileName>Staff.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Petrol_Station.Models.User" Collapsed="true">
+    <Position X="0.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Petrol_Station.Petrol_StationContext" Collapsed="true">
+    <Position X="2.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAACAAAAEGAAAAEAAAgAAAAAAAA=</HashCode>
+      <FileName>Petrol_StationContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Petrol_Station.Program" Collapsed="true">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Petrol_Station.Startup" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAgAAACAAAAAA=</HashCode>
+      <FileName>Startup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Petrol_Station.Infrastructure.SessionExtensions" Collapsed="true">
+    <Position X="7.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABABAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SessionExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Petrol_Station.ViewModels.SortState" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAIABAAIAASAgAAQAAAAAAAAEgIEAkJAioBIgIADACA=</HashCode>
+      <FileName>SortViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
